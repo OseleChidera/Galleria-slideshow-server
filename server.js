@@ -6,7 +6,13 @@ const port = 4000
 const fs = require('fs');
 path = require('path');
 
-
+app.get('/', (req, res) => {
+    try {
+        res.json("Welcome to galleria api");
+    } catch (error) {
+        console.error('Error parsing JSON:', error);
+    }
+});
 
 app.get('/data', (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
